@@ -3,7 +3,7 @@
   "version": "1.0.0",
   "main": "index.ts",
   "scripts": {
-    "test": "ts-node index.ts"
+    "dev": "ts-node src/index.ts"
   },
   "author": "Penyo",
   "license": "ISC",
