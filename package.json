@@ -1,0 +1,16 @@
+{
+  "name": "anime-getter",
+  "version": "1.0.0",
+  "main": "index.ts",
+  "scripts": {
+    "test": "ts-node index.ts"
+  },
+  "author": "Penyo",
+  "license": "ISC",
+  "description": "",
+  "dependencies": {
+    "cheerio": "^1.0.0-rc.12",
+    "download": "^8.0.0",
+    "puppeteer": "^22.12.1"
+  }
+}
