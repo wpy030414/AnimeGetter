@@ -1,6 +1,12 @@
 export const headers = {
-  Cookie:
-    "_gid=GA1.2.1813953960.1720093360; cf_clearance=gNsxmy0GKyetT_QH2jcn9tignR9j9eY7lG7auuXmojk-1720093744-1.0.1.1-bboOGxcWBN2D2lFm913nGvVDSiE9gj78mnVjMEX7juaXrGh0A39F0KLSu8TULWBL75F35NODLLMyglgQElikVw; XSRF-TOKEN=eyJpdiI6InQzSXpKYmRXNGhUcm53a2wxa0p6QVE9PSIsInZhbHVlIjoiMW15bStwMlNWZHhZTFNLYjI5OXhlM21OWXBqXC9RRHllTmFETnVId2JQNVwvK2R0TVNPWXFieHFUQTA5SzRMZXFJIiwibWFjIjoiZjc5MGE1MTVlMzA4YWRlMzIwOGQyYjZmOGIzMDgxZmI3NTBiNDkxNjQzMzliZTRhYzg3Zjk5ZjczNTFkMWQ5MSJ9; hanime1_session=eyJpdiI6IkhJVUxrakJnWmJFZEg4K3FUdWRzdVE9PSIsInZhbHVlIjoid1pzR2JQXC9YaXVFa2pUNUpHN2diY1paQjJyY0ZKXC9VSGZPTnMyUlRRQzgyeldoaHo3ak10a0I0WVFHbTNVNzBLIiwibWFjIjoiODRmZWIwNWNmOThmM2JmZWRmNWYxMTU2ODhlNDA2ZjllYmY1ZGNlOGM1MmQ5NjQyZGI3M2U3ZTY3YWFlYzRlZiJ9; _gat_gtag_UA_125786247_2=1; _ga_2JNTSFQYRQ=GS1.1.1720097061.2.0.1720097061.0.0.0; _ga=GA1.1.621298133.1720093360",
+  Cookie: "__ddg1_=jUpmvd8DBWwocuIHaYUB; thumbSize=180",
   "User-Agent":
-    "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/126.0.0.0 Safari/537.36 Edg/126.0.0.0",
+    "Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:129.0) Gecko/20100101 Firefox/129.0",
+};
+
+export const rpc = {
+  host: "http://localhost",
+  port: 16800,
+  path: "/jsonrpc",
+  token: "114514",
 };
