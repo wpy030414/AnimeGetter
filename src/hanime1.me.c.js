@@ -76,6 +76,8 @@
       document.querySelectorAll(".home-rows-videos-wrapper > a")
     ).map((a) => a.href);
 
+    const videos = [];
+
     for (const urlOfVideoWC of urlsOfVideoWC) {
       const videoWC = await open(urlOfVideoWC);
       const ja = videoWC.document
@@ -92,7 +94,21 @@
       const addr = videoDL.document.querySelector(".exoclick-popunder").href;
       videoDL.close();
 
-      dl(addr, `[${time}] ${ja}（${zh}）.mp4`);
+      videos.push({
+        ja,
+        zh,
+        time,
+        addr,
+      });
+      dl(
+        addr,
+        `[${time}] ${ja}（${zh}）.mp4`
+          .replace(":", "：")
+          .replace("?", "？")
+          .replace(/[<>"/\\|*]+/g, "")
+      );
     }
+
+    console.debug("全部下载成功：", videos);
   }
 })();
