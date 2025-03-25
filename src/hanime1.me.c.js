@@ -12,6 +12,10 @@
 (function () {
   "use strict";
 
+  const options = {
+    idRange: [0, 0],
+  }
+
   /**
    * @returns {Promise<Window>}
    */
@@ -74,12 +78,20 @@
   async function run() {
     const urlsOfVideoWC = Array.from(
       document.querySelectorAll(".home-rows-videos-wrapper > a")
-    ).map((a) => a.href);
+    ).map((a) => a.href).filter((url) => url.includes("hanime"));
 
     const videos = [];
 
     for (const urlOfVideoWC of urlsOfVideoWC) {
+      const id = parseInt(urlOfVideoWC.split("=")[1]);
+      if (options.idRange[0] && id < options.idRange[0] || options.idRange[1] && id > options.idRange[1]) {
+        continue;
+      }
+
       const videoWC = await open(urlOfVideoWC);
+      while (videoWC.document.querySelector("h3") === null) {
+        await new Promise((r) => setTimeout(r, 100));
+      }
       const ja = videoWC.document
         .querySelector("h3")
         .textContent.replace("[中文字幕]", "")
@@ -87,6 +99,9 @@
       videoWC.close();
 
       const videoDL = await open(urlOfVideoWC.replace("watch", "download"));
+      while (videoDL.document.querySelector("h3") === null) {
+        await new Promise((r) => setTimeout(r, 100));
+      }
       const zh = videoDL.document.querySelector("h3").textContent.trim();
       const time = videoDL.document
         .querySelector("p")
